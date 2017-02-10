@@ -1,0 +1,50 @@
+print 'Testing function declaration and invocation statements.'
+print 'This should terminate with the output:\n'
+print '* function returning nothing'
+print 'calling "test_f1" return value is " "'
+print ''
+print '* function returning an integer value'
+print 'calling "test_f2" return value is " 12345 "'
+print ''
+print '* function returning a floating point value'
+print 'calling "test_f3" return value is " 3.14159 "'
+print ''
+print '* function returning a string value'
+print 'calling "test_f4" return value is " hello world! "'
+print ''
+print '* function taking a parameter and returning parameter value'
+print 'calling "test_f5" return value is " no hello "'
+input_str('\nPress Enter key to begin test:')
+
+function = test_f1
+    print '* function returning nothing'
+endf
+
+function = test_f2
+    print '* function returning an integer value'
+    return 12345
+endf
+
+function = test_f3
+    print '* function returning a floating point value'
+    return 3.14159
+endf
+
+function = test_f4
+    print '* function returning a string value'
+    return 'hello world!'
+endf
+
+function = test_f5
+    print '* function taking a parameter and returning parameter value'
+    return $(1)
+endf
+
+print 'calling "test_f1" return value is "', test_f1(), '"\n'
+print 'calling "test_f2" return value is "', test_f2(), '"\n'
+print 'calling "test_f3" return value is "', test_f3(), '"\n'
+print 'calling "test_f4" return value is "', test_f4(), '"\n'
+print 'calling "test_f5" return value is "', test_f5('no hello'), '"\n'
+
+delete test_f1, test_f2, test_f3, test_f4, test_f5
+

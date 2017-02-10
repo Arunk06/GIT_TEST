@@ -1,0 +1,21 @@
+print 'Testing a break statement in a while loop.'
+print 'This should terminate with the output:\n'
+print '  The value of iter_num is 1'
+print '  The value of iter_num is 2'
+print '  The value of iter_num is 3'
+print '  The value of iter_num is 4'
+input_str('\nPress Enter key to begin test:')
+
+iter_num := 0
+
+while iter_num < 10 do
+    iter_num := iter_num + 1
+
+    if iter_num == 5 then
+        break
+    fi
+
+    print 'The value of iter_num is', iter_num
+od
+
+delete iter_num

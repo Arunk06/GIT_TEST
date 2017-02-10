@@ -1,0 +1,8 @@
+dchan = 1111
+
+@/opt/aitess/lib/settings.lib
+@/opt/aitess/lib/math.lib
+@/opt/aitess/lib/helpers.lib
+
+init_message()
+

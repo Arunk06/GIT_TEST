@@ -1,0 +1,120 @@
+#!/bin/bash
+
+function module_dir
+{
+    rm -f module
+    ln -sf $1 module
+}
+
+function aets_all
+{
+    echo "DEF COMPLEMENTING = True
+
+DEF XENOMAI_API = False
+
+DEF AIRDATS_E_MK1 = False
+DEF AIRDATS_E_MK2 = False
+DEF AETS_EXC_MK1 = False
+DEF AETS_ALL = True
+">settings.pyi
+}
+
+function aets_all_igs
+{
+    echo "DEF COMPLEMENTING = True
+
+DEF XENOMAI_API = True
+
+DEF AIRDATS_E_MK1 = False
+DEF AIRDATS_E_MK2 = False
+DEF AETS_EXC_MK1 = False
+DEF AETS_ALL = True
+">settings.pyi
+}
+
+function aets_exc_mk1
+{
+    echo "DEF COMPLEMENTING = True
+
+DEF XENOMAI_API = False
+
+DEF AIRDATS_E_MK1 = False
+DEF AIRDATS_E_MK2 = False
+DEF AETS_EXC_MK1 = True
+DEF AETS_ALL = False
+">settings.pyi
+}
+
+function airdatse_mk1
+{
+    echo "DEF COMPLEMENTING = True
+
+DEF XENOMAI_API = False
+
+DEF AIRDATS_E_MK1 = True
+DEF AIRDATS_E_MK2 = False
+DEF AETS_EXC_MK1 = False
+DEF AETS_ALL = False
+">settings.pyi
+}
+
+function airdatse_mk2
+{
+    echo "DEF COMPLEMENTING = True
+
+DEF XENOMAI_API = False
+
+DEF AIRDATS_E_MK1 = False
+DEF AIRDATS_E_MK2 = True
+DEF AETS_EXC_MK1 = False
+DEF AETS_ALL = False
+">settings.pyi
+}
+
+function usage
+{
+    echo
+    echo "Usage: $0 system_name module_path"
+    echo
+    echo "       where system_name can be any one of aets_all, aets_all_igs,"
+    echo "       aets_exc_mk1, airdatse_mk1, or airdatse_mk2"
+    echo
+}
+
+if [ $# -ne 2 ]
+then
+    usage
+    exit
+fi
+
+if [ $1 == "aets_all" ]
+then
+    echo Configuring sources for All AETS...
+    module_dir $2
+    aets_all
+elif [ $1 == "aets_all_igs" ]
+then
+    echo Configuring sources for All IGS AETS...
+    module_dir $2
+    aets_all_igs
+elif [ $1 == "aets_exc_mk1" ]
+then
+    echo Configuring sources for exclusively Mk1 AETS...
+    module_dir $2
+    aets_exc_mk1
+elif [ $1 == "airdatse_mk1" ]
+then
+    echo Configuring sources for All AIRDATS-E Mk1...
+    module_dir $2
+    airdatse_mk1
+elif [ $1 == "airdatse_mk2" ]
+then
+    echo Configuring sources for All AIRDATS-E Mk2...
+    module_dir $2
+    airdatse_mk2
+else
+    echo "ERROR: Unknown system specified"
+    usage
+    exit
+fi
+

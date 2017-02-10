@@ -1,0 +1,22 @@
+print 'Testing a while statement.'
+print 'This should terminate with the output:\n'
+print '  The value of iter_num is 1'
+print '  The value of iter_num is 2'
+print '  The value of iter_num is 3'
+print '  The value of iter_num is 4'
+print '  The value of iter_num is 5'
+print '  The value of iter_num is 6'
+print '  The value of iter_num is 7'
+print '  The value of iter_num is 8'
+print '  The value of iter_num is 9'
+print '  The value of iter_num is 10'
+input_str('\nPress Enter key to begin test:')
+
+iter_num := 0
+
+while iter_num < 10 do
+    iter_num := iter_num + 1
+    print 'The value of iter_num is', iter_num
+od
+
+delete iter_num

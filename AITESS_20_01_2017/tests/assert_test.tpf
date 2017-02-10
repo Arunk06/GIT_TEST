@@ -1,0 +1,16 @@
+print 'Testing an assert statement.'
+print 'This should terminate with the output:\n'
+print '  Input a decimal number: <>'
+print '  The number you entered is non-zero'
+print 'or:'
+print '  Input a decimal number: 0'
+print '  Assert Error (file \'.../assert_test.tpf\', line 12): \'number[=0]\', The number you entered is zero.'
+input_str('\nPress Enter key to begin test:')
+
+number := input_int('Input a decimal number: ')
+
+assert number, 'The number you entered is zero'
+
+print 'The number you entered is non-zero'
+
+delete number

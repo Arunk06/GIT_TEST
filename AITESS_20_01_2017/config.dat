@@ -1,0 +1,21 @@
+! AITESS configuration file template
+project=airdats_e/aets
+uut=ladc/adc/dfcc
+usecache=false/true
+rdfversions=false/true
+sysdbfpath=/path/to/symbols/
+sysdbf=system.sym
+sysmacpath=/path/to/macros/
+sysmacfile=system.mac
+syslibpath=/path/to/libs/
+syslibfile=system.lib
+usrdbfpath=/path/to/symbols/
+usrdbf=user.sym
+usrmacpath=/path/to/macros/
+usrmacfile=user.mac
+usrlibpath=/path/to/libs/
+usrlibfile=user.lib
+downloadpath=/path/to/downloads/
+tpfpath=/path/to/input/
+rdfpath=/path/to/output/
+uploadpath=/path/to/uploads/

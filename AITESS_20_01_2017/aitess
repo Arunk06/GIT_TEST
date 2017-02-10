@@ -1,0 +1,1 @@
+chrt -o 0 python /opt/aitess/bin/main.py
